@@ -1,16 +1,12 @@
 import React from 'react';
-import logo from './logo.png';
+import Header from './components/Header';
 import './App.css';
 
 function App() {
   return (
     <div className="container">
 
-
-      <header>
-        <div className="hr"></div>
-        <img className="logo" src={logo} alt="tiempo development" />
-      </header>
+      <Header/>
 
 
       <h1>Full Name</h1>
@@ -28,7 +24,7 @@ function App() {
               <button className="btn btn-delete">&#10005;</button>
             </li>
             <li className="editable-content">
-              <b>Tool Summary</b> Lorem, Ipsum
+              <b>Technology Summary</b> Lorem, Ipsum
               <button className="btn btn-edit">&#9998;</button>
               <button className="btn btn-delete">&#10005;</button>
             </li>
@@ -67,7 +63,7 @@ function App() {
                   <button className="btn btn-delete">&#10005;</button>
                 </li>
                 <li className="editable-content">
-                  <b>Tool Summary</b> Lorem, Ipsum
+                  <b>Technology Summary</b> Lorem, Ipsum
                   <button className="btn btn-edit">&#9998;</button>
                   <button className="btn btn-delete">&#10005;</button>
                 </li>
@@ -103,11 +99,11 @@ function App() {
         </div>
         <div className="col-detail">
           <div className="editable-container">
-                <p className="editable-content">
-                  <b>Course name</b><br />School (Year)
-                  <a className="btn btn-edit">&#9998;</a>
-                  <a className="btn btn-delete">&#10005;</a>
-                </p>
+            <p className="editable-content">
+              <b>Course name</b><br />School (Year)
+              <button className="btn btn-edit">&#9998;</button>
+              <button className="btn btn-delete">&#10005;</button>
+            </p>
           </div>
           <button className="btn btn-create">ADD COURSE</button>
         </div>

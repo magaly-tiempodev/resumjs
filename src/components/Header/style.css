@@ -1,0 +1,17 @@
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.hr {
+  background: var(--gray-color);
+  height: 2px;
+  flex: 1;
+  margin: 20px 0 0;
+}
+
+.logo {
+  width: 142px;
+}

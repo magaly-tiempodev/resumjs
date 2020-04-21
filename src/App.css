@@ -28,13 +28,6 @@ body {
   padding: 0;
 }
 
-header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 20px 0;
-}
-
 ul {
   line-height: 1.6em;
   margin: 5px 0 0;
@@ -50,16 +43,7 @@ input:not([type=submit]) {
   width: calc(100% - 40px);
 }
 
-.hr {
-  background: var(--gray-color);
-  height: 2px;
-  flex: 1;
-  margin: 20px 0 0;
-}
 
-.logo {
-  width: 142px;
-}
 
 .align-right {
   text-align: right;
