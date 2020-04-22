@@ -1,0 +1,9 @@
+h1 {
+  line-height: 1em;
+  display: inline-flex;
+  align-items: center;
+}
+
+h1 button {
+  margin-left: 1em;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './components/Header';
+import Name from './components/Name';
 import './App.css';
 
 function App() {
@@ -7,10 +8,7 @@ function App() {
     <div className="container">
 
       <Header/>
-
-
-      <h1>Full Name</h1>
-
+      <Name />
 
       <div className="row">
         <div className="col-title">

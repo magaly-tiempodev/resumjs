@@ -33,18 +33,6 @@ ul {
   margin: 5px 0 0;
 }
 
-input:not([type=submit]) {
-  display: block;
-  border: 2px solid var(--gray-color);
-  border-radius: 3px;
-  font-size: 14px;
-  padding: 10px 20px;
-  margin-bottom: 5px;
-  width: calc(100% - 40px);
-}
-
-
-
 .align-right {
   text-align: right;
 }
@@ -137,87 +125,6 @@ input:not([type=submit]) {
   opacity: 1;
 }
 
-.btn {
-  font-family: Roboto, Helvetica, sans-serif;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  cursor: pointer;
-  font-size: 13px;
-  font-weight: 700;
-  transition-property: background-color, color, opacity;
-  transition-duration: .3s;
-  transition-timing-function: cubic-bezier(.3, .3, 1, 1);
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.btn-create,
-.btn-save,
-.btn-back {
-  border-radius: 3px;
-  padding: 10px 20px;
-  margin-bottom: 15px;
-}
-
-.btn-edit,
-.btn-delete {
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn-create,
-.btn-save {
-  background-color: var(--primary-color);
-  color: var(--white-color);
-}
-
-.btn-create:hover,
-.btn-create:focus,
-.btn-create:active,
-.btn-save:hover,
-.btn-save:focus,
-.btn-save:active {
-  background-color: var(--primary-hover-color);
-}
-
-.btn-back {
-  background-color: var(--gray-color);
-  color: var(--white-color);
-}
-
-.btn-back:hover,
-.btn-back:focus,
-.btn-back:active {
-  background-color: var(--gray-hover-color);
-}
-
-.btn-edit {
-  background-color: var(--secondary-color);
-  color: var(--white-color);
-}
-
-.btn-edit:hover,
-.btn-edit:focus,
-.btn-edit:active {
-  background-color: var(--secondary-hover-color);
-}
-
-.btn-delete {
-  background-color: var(--alert-color);
-  color: var(--white-color);
-}
-
-.btn-delete:hover,
-.btn-delete:focus,
-.btn-delete:active {
-  background-color: var(--alert-hover-color);
-}
-
 @media print {
   body {
     font-family: Roboto, Helvetica, sans-serif;
@@ -226,10 +133,6 @@ input:not([type=submit]) {
 
   ul {
     line-height: 1.3em;
-  }
-
-  .btn {
-    display: none;
   }
 
   .row-m {
