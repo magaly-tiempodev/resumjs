@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Input from '../shared/Input';
 import Button from '../shared/Button';
 import './style.css'
@@ -14,14 +14,14 @@ function Name() {
   const inputOnChange = e => {
     setInputName(e.target.value);
   }
-  
+
   const onKeyDown = e => {
     if (e.key === 'Enter') {
       setEditing( !editing );
     }
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     localStorage.setItem('username', inputName);
   }, [inputName]);
 
