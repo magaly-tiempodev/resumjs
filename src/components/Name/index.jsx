@@ -5,10 +5,10 @@ import './style.css'
 
 function Name() {
   const [editing, setEditing] = useState(false);
-  const [inputName, setInputName] = useState('Magaly Ruiz'); // get info from session storage 
+  const [inputName, setInputName] = React.useState(localStorage.getItem('username') || '');
 
   const btnClick = () => {
-    setEditing( !editing )
+    setEditing( !editing );
   };
 
   const inputOnChange = e => {
@@ -16,11 +16,13 @@ function Name() {
   }
   const onKeyDown = e => {
     if (e.key === 'Enter') {
-      setEditing( !editing )
-      // validar si el value no esta vacio
-      // guardar el valor en session storage
+      setEditing( !editing );
     }
   }
+
+  React.useEffect(() => {
+    localStorage.setItem('username', inputName);
+  }, [inputName]);
 
   return (
     <React.Fragment>
