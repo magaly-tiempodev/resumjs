@@ -14,6 +14,7 @@ function Name() {
   const inputOnChange = e => {
     setInputName(e.target.value);
   }
+  
   const onKeyDown = e => {
     if (e.key === 'Enter') {
       setEditing( !editing );
@@ -31,7 +32,6 @@ function Name() {
         : <h1>{inputName} <Button buttonClass='btn btn-edit' buttonOnClick={btnClick} buttonLabel='&#9998;' /></h1>
       }
     </React.Fragment>
-
   );
 }
 

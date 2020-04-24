@@ -3,7 +3,3 @@ h1 {
   display: inline-flex;
   align-items: center;
 }
-
-h1 button {
-  margin-left: 1em;
-}
