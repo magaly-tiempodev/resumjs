@@ -1,38 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import Input from '../shared/Input';
-import Button from '../shared/Button';
-import './style.css'
+import React from 'react';
 
 function Name() {
-  const [editing, setEditing] = useState(false);
+  const [isEditing, setEditing] = React.useState(false);
   const [inputName, setInputName] = React.useState(localStorage.getItem('username') || '');
 
-  const btnClick = () => {
-    setEditing( !editing );
+  React.useEffect(() => {
+    localStorage.setItem('username', inputName);
+  });
+
+  function toggleEditing() {
+    setEditing( !isEditing );
   };
 
-  const inputOnChange = e => {
+  function inputOnChange(e) {
     setInputName(e.target.value);
   }
 
-  const onKeyDown = e => {
+  function handleSubmit(e) {
     if (e.key === 'Enter') {
-      setEditing( !editing );
+      setEditing( !isEditing );
     }
   }
 
-  useEffect(() => {
-    localStorage.setItem('username', inputName);
-  }, [inputName]);
-
-  return (
-    <React.Fragment>
-      {editing
-        ? <Input inputId="fullname" inputValue={inputName} inputLabel='Full Name' inputOnChange={inputOnChange} inputOnKeyDown={onKeyDown} />
-        : <h1>{inputName} <Button buttonClass='btn btn-edit' buttonOnClick={btnClick} buttonLabel='&#9998;' /></h1>
-      }
-    </React.Fragment>
-  );
+  if(isEditing) {
+    return (
+      <form>
+        <label htmlFor="editingName">Full Name</label>
+        <input type="text" id="editingName" autoFocus name="inputName" value={inputName} onChange={inputOnChange} onKeyDown={handleSubmit}/>
+        <button type="submit" onClick={handleSubmit}>SAVE</button>
+        <button type="reset" onClick={toggleEditing}>CANCEL</button>
+      </form>
+    )
+  }
+  else {
+    return (
+      <button type="button" onClick={toggleEditing}>{inputName}</button>
+    )
+  }
 }
 
 export default Name;
