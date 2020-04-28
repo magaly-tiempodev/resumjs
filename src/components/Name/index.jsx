@@ -2,39 +2,43 @@ import React from 'react';
 
 function Name() {
   const [isEditing, setEditing] = React.useState(false);
-  const [inputName, setInputName] = React.useState(localStorage.getItem('username') || 'Full Name');
+  const [fullName, setFullName] = React.useState(localStorage.getItem('username') || 'Full Name');
+  const [temp, setTemp] = React.useState(fullName);
 
   React.useEffect(() => {
-    localStorage.setItem('username', inputName);
+    localStorage.setItem('username', fullName);
   });
 
   function toggleEditing() {
     setEditing( !isEditing );
   };
 
+  function cancelEditing() {
+    setTemp(fullName);
+    setEditing( !isEditing );
+  };
+
   function inputOnChange(e) {
-    setInputName(e.target.value);
+    setTemp(e.target.value);
   }
 
   function handleSubmit(e) {
-    if (e.key === 'Enter') {
-      setEditing( !isEditing );
-    }
+    setFullName(temp);
   }
 
   if(isEditing) {
     return (
       <form>
         <label htmlFor="editingName">Full Name</label>
-        <input type="text" id="editingName" autoFocus name="inputName" value={inputName} onChange={inputOnChange} onKeyDown={handleSubmit}/>
+        <input type="text" id="editingName" autoFocus name="fullName" value={temp} onChange={inputOnChange} />
         <button type="submit" onClick={handleSubmit}>SAVE</button>
-        <button type="reset" onClick={toggleEditing}>CANCEL</button>
+        <button type="reset" onClick={cancelEditing}>CANCEL</button>
       </form>
     )
   }
   else {
     return (
-      <button type="button" onClick={toggleEditing}>{inputName}</button>
+      <button type="button" onClick={toggleEditing}>{fullName}</button>
     )
   }
 }
