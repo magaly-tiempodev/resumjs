@@ -58,6 +58,11 @@ function Languages() {
       setEditing(!isEditing);
     }
 
+    function cancelEditing() {
+      updateFormData({ id: lang.id, language: lang.language, level: lang.level });
+      setEditing(!isEditing);
+    }
+
     function handleEditing(e) {
       updateFormData({
         ...formData,
@@ -89,7 +94,7 @@ function Languages() {
           <input id="editLevel" name="level" value={formData.level} onChange={handleEditing}/>
 
           <button type="submit" onClick={handleSubmit}>SAVE</button>
-          <button type="reset" onClick={toggleEditing}>CANCEL</button>
+          <button type="reset" onClick={cancelEditing}>CANCEL</button>
         </form>
       );
     }
@@ -118,7 +123,7 @@ function Languages() {
       <div className="col-detail">
         <div className="editable-container">
           {list.map(lang => (
-            <div key={lang.id}>
+            <div className="editable-content" key={lang.id}>
               <EditLanguage lang={lang} />
               <RemoveLanguage id={lang.id} />
             </div>
