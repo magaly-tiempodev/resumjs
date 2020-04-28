@@ -7,7 +7,7 @@ function Languages() {
     localStorage.setItem('languages', JSON.stringify(list));
   });
 
-  function AddLanguage(){
+  function AddLanguage() {
     const nextId = (list.length > 0) ? list[list.length-1].id + 1 : 0;
     const [isAdding, setAdding] = React.useState(false);
     const [formData, updateFormData] = React.useState({ id: nextId, language: "", level: "" });
