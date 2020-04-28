@@ -2,7 +2,7 @@ import React from 'react';
 
 function Name() {
   const [isEditing, setEditing] = React.useState(false);
-  const [inputName, setInputName] = React.useState(localStorage.getItem('username') || '');
+  const [inputName, setInputName] = React.useState(localStorage.getItem('username') || 'Full Name');
 
   React.useEffect(() => {
     localStorage.setItem('username', inputName);
