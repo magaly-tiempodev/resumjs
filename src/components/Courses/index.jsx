@@ -129,7 +129,7 @@ function Courses() {
       <div className="col-detail">
         <div className="editable-container">
           {list.map(course => (
-            <p className="editable-content">
+            <p className="editable-content" key={course.id}>
               <EditCourse course={course} />
               <RemoveCourse id={course.id} />
             </p>
