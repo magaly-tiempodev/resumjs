@@ -1,4 +1,5 @@
 import React from 'react';
+import TechSummary from './TechSummary';
 
 function TechnicalProfile() {
   const [list, setList] = React.useState(JSON.parse(localStorage.getItem('technical')) || []);
@@ -55,6 +56,11 @@ function TechnicalProfile() {
       setEditing(!isEditing);
     }
 
+    function cancelEditing() {
+      updateFormData({ id: tech.id, tech: tech.tech })
+      setEditing(!isEditing);
+    }
+
     function handleEditing(e) {
       updateFormData({
         ...formData,
@@ -83,7 +89,7 @@ function TechnicalProfile() {
           <input id="addTech" name="tech" value={formData.tech} onChange={handleEditing} />
 
           <button type="submit" onClick={handleSubmit}>SAVE</button>
-          <button type="reset" onClick={toggleEditing}>CANCEL</button>
+          <button type="reset" onClick={cancelEditing}>CANCEL</button>
         </form>
       )
     }
@@ -121,9 +127,7 @@ function TechnicalProfile() {
             <AddTech />
           </li>
           <li className="editable-content">
-            <b>Technology Summary:</b> Lorem, Ipsum
-            <button className="btn btn-edit">&#9998;</button>
-            <button className="btn btn-delete">&#10005;</button>
+            <TechSummary />
           </li>
         </ul>
       </div>
