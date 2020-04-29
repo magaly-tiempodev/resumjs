@@ -8,11 +8,19 @@
   flex-direction: column;
 }
 .course-form-input:nth-child(2) {
+  flex: 0 1 100px;
   margin-left: 30px;
+  text-align: center;
 }
 .course-form-year {
   display: flex;
 }
 .course-form-year input {
   text-align: center;
+}
+.course-form-year span:first-of-type {
+  margin: 0 15px 0 0;
+}
+.course-form-year span:last-of-type {
+  margin: 0 0 0 15px;
 }

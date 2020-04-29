@@ -138,7 +138,7 @@ function Languages() {
   }
 
   return (
-    <div className="row m">
+    <div className="row m mb">
       <div className="col-title">
         <h4>Language Skills</h4>
       </div>
@@ -151,7 +151,7 @@ function Languages() {
             </div>
           ))}
         </div>
-        <AddLanguage /><br/><br/><br/><br/>
+        <AddLanguage />
       </div>
     </div>
   );

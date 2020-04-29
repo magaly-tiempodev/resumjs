@@ -46,7 +46,7 @@ function Courses() {
             </div>
             <div className="course-form-input">
               <label htmlFor="addYear">Year</label>
-              <div className="course-form-year">(<input className="content" id="addYear" name="year" onChange={handleChange} />)</div>
+              <div className="course-form-year"><span>(</span><input className="content" id="addYear" name="year" onChange={handleChange} /><span>)</span></div>
             </div>
           </div>
           <button type="submit" onClick={handleSubmit}>SAVE</button>
