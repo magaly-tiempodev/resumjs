@@ -36,7 +36,7 @@ function Courses() {
           <div className="course-form">
             <div className="course-form-input">
               <label htmlFor="addCourse">Course Name</label>
-              <input className="content" id="addCourse" name="course" onChange={handleChange} />
+              <input className="content bold" id="addCourse" name="course" onChange={handleChange} />
             </div>
           </div>
           <div className="course-form">
@@ -101,7 +101,7 @@ function Courses() {
           <div className="course-form">
             <div className="course-form-input">
               <label htmlFor="addCourse">Course Name</label>
-              <input className="content" id="addCourse" name="course" value={formData.course} onChange={handleEditing} />
+              <input className="content bold" id="addCourse" name="course" value={formData.course} onChange={handleEditing} />
             </div>
           </div>
           <div className="course-form">
@@ -146,10 +146,10 @@ function Courses() {
       <div className="col-detail">
         <div className="editable-container">
           {list.map(course => (
-            <p className="editable-content" key={course.id}>
+            <div className="editable-content mb" key={course.id}>
               <RemoveCourse id={course.id} />
               <EditCourse course={course} />
-            </p>
+            </div>
           ))}
         </div>
         <AddCourse />

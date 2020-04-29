@@ -1,0 +1,33 @@
+.education-form {
+  display: flex;
+  margin-bottom: 5px;
+}
+.education-form-text {
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.education-form-text-last {
+  padding-top: 15px;
+  padding-left: 15px;
+}
+.education-form-input {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.education-form-input-year {
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.education-form-input-year input {
+  text-align: center;
+}
+.education-form-format {
+  flex: 1;
+  display: flex;
+}
+.education-form-format input {
+  flex: 1;
+}

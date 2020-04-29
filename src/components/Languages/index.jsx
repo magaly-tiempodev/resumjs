@@ -40,7 +40,7 @@ function Languages() {
             </div>
             <div className="language-form-input">
               <label htmlFor="addLevel">Level</label>
-              <input className="content" id="addLevel" list="adddatalevel" name="level" onChange={handleChange} />
+              <input className="content bold" id="addLevel" list="adddatalevel" name="level" onChange={handleChange} />
               <datalist id="adddatalevel">
                 <option value="Native or bilingual" />
                 <option value="Full professional" />
@@ -102,7 +102,7 @@ function Languages() {
           <div className="language-form">
             <div className="language-form-input">
               <label htmlFor="editLanguage">Language</label>
-              <input className="content" id="editLanguage" autoFocus name="language" value={formData.language} onChange={handleEditing}/>
+              <input className="content bold" id="editLanguage" autoFocus name="language" value={formData.language} onChange={handleEditing}/>
             </div>
             <div className="language-form-input">
               <label htmlFor="editLevel">Level</label>

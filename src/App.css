@@ -70,6 +70,9 @@ textarea:focus {
 .m {
   margin-top: 2em;
 }
+.mb {
+  margin-bottom: 1em;
+}
 
 .col {
   flex: 1 0;
@@ -123,6 +126,10 @@ textarea:focus {
   margin: 0;
   padding: 0;
   text-align: left;
+}
+.content.bold,
+.content .bold {
+  font-weight: bold;
 }
 
 .editable-container:hover .editable-content {

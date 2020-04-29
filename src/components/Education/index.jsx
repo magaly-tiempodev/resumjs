@@ -1,4 +1,5 @@
 import React from 'react';
+import './Education.css';
 
 function Education() {
   const [list, setList] = React.useState(JSON.parse(localStorage.getItem('education')) || []);
@@ -32,21 +33,36 @@ function Education() {
     if(isAdding) {
       return (
         <form>
-          <label htmlFor="addDegree">Degree</label>
-          <input id="addDegree" name="degree" onChange={handleChange} />
-
-          <label htmlFor="addTitle">Title</label>
-          <input id="addTitle" name="title" onChange={handleChange} />
-
-          <label htmlFor="addSchool">School</label>
-          <input id="addSchool" name="school" onChange={handleChange} />
-
-          <label htmlFor="addStart">Year Start</label>
-          <input id="addStart" name="start" onChange={handleChange} />
-
-          <label htmlFor="addEnd">Year End</label>
-          <input id="addEnd" name="end" onChange={handleChange} />
-
+          <div className="education-form">
+            <div className="education-form-input">
+              <label htmlFor="addDegree">Degree</label>
+              <input className="content bold" id="addDegree" name="degree" onChange={handleChange} />
+            </div>
+            <div className="education-form-text">in</div>
+            <div className="education-form-input">
+              <label htmlFor="addTitle">Title</label>
+              <div className="education-form-format">' <input className="content" id="addTitle" name="title" onChange={handleChange} /> '</div>
+            </div>
+          </div>
+          <div className="education-form">
+            <div className="education-form-input">
+              <label htmlFor="addSchool">School</label>
+              <input className="content" id="addSchool" name="school" onChange={handleChange} />
+            </div>
+            <div className="education-form">
+              <div className="education-form-text">(</div>
+              <div className="education-form-input-year">
+                <label htmlFor="addStart">Year Start</label>
+                <input className="content" id="addStart" name="start" onChange={handleChange} />
+              </div>
+              <div className="education-form-text">-</div>
+              <div className="education-form-input-year">
+                <label htmlFor="addEnd">Year End</label>
+                <input className="content" id="addEnd" name="end" onChange={handleChange} />
+              </div>
+              <div className="education-form-text-last">)</div>
+            </div>
+          </div>
           <button type="submit" onClick={handleSubmit}>SAVE</button>
           <button type="reset" onClick={toggleAdding}>CANCEL</button>
         </form>
@@ -54,7 +70,7 @@ function Education() {
     }
     else {
       return (
-        <button type="button" onClick={toggleAdding}>ADD EDUCATION</button>
+        <button className="add" type="button" onClick={toggleAdding}>ADD EDUCATION</button>
       )
     }
   }
@@ -96,21 +112,36 @@ function Education() {
     if(isEditing) {
       return (
         <form>
-          <label htmlFor="addDegree">Degree</label>
-          <input id="addDegree" name="degree" value={formData.degree} onChange={handleEditing} />
-
-          <label htmlFor="addTitle">Title</label>
-          <input id="addTitle" name="title" value={formData.title} onChange={handleEditing} />
-
-          <label htmlFor="addSchool">School</label>
-          <input id="addSchool" name="school" value={formData.school} onChange={handleEditing} />
-
-          <label htmlFor="addStart">Year Start</label>
-          <input id="addStart" name="start" value={formData.start} onChange={handleEditing} />
-
-          <label htmlFor="addEnd">Year End</label>
-          <input id="addEnd" name="end" value={formData.end} onChange={handleEditing} />
-
+          <div className="education-form">
+            <div className="education-form-input">
+              <label htmlFor="addDegree">Degree</label>
+              <input className="content bold" id="addDegree" name="degree" value={formData.degree} onChange={handleEditing} />
+            </div>
+            <div className="education-form-text">in</div>
+            <div className="education-form-input">
+              <label htmlFor="addTitle">Title</label>
+              <div className="education-form-format">' <input className="content" id="addTitle" name="title" value={formData.title} onChange={handleEditing} /> '</div>
+            </div>
+          </div>
+          <div className="education-form">
+            <div className="education-form-input">
+              <label htmlFor="addSchool">School</label>
+              <input className="content" id="addSchool" name="school" value={formData.school} onChange={handleEditing} />
+            </div>
+            <div className="education-form">
+              <div className="education-form-text">(</div>
+              <div className="education-form-input-year">
+                <label htmlFor="addStart">Year Start</label>
+                <input className="content" id="addStart" name="start" value={formData.start} onChange={handleEditing} />
+              </div>
+              <div className="education-form-text">-</div>
+              <div className="education-form-input-year">
+                <label htmlFor="addEnd">Year End</label>
+                <input className="content" id="addEnd" name="end" value={formData.end} onChange={handleEditing} />
+              </div>
+              <div className="education-form-text-last">)</div>
+            </div>
+          </div>
           <button type="submit" onClick={handleSubmit}>SAVE</button>
           <button type="reset" onClick={cancelEditing}>CANCEL</button>
         </form>
@@ -118,7 +149,7 @@ function Education() {
     }
     else {
       return (
-        <button type="button" onClick={toggleEditing}>
+        <button className="content" type="button" onClick={toggleEditing}>
           <b>{education.degree}</b> in '{education.title}'
           <br />{education.school} ({education.start} - {education.end})
         </button>
@@ -131,7 +162,7 @@ function Education() {
       setList(list.filter(item => item.id !== id));
     }
     return (
-      <button type="button" onClick={handleRemove}>Remove</button>
+      <button className="remove" type="button" onClick={handleRemove}>&times;</button>
     )
   }
 
@@ -143,10 +174,10 @@ function Education() {
       <div className="col-detail">
         <div className="editable-container">
           {list.map(education => (
-            <p className="editable-content" key={education.id}>
-              <EditEducation education={education} />
+            <div className="editable-content mb" key={education.id}>
               <RemoveEducation id={education.id} />
-            </p>
+              <EditEducation education={education} />
+            </div>
           ))}
         </div>
         <AddEducation />
