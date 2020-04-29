@@ -1,8 +1,9 @@
 import React from 'react';
+import './Name.css';
 
 function Name() {
   const [isEditing, setEditing] = React.useState(false);
-  const [fullName, setFullName] = React.useState(localStorage.getItem('username') || 'Full Name');
+  const [fullName, setFullName] = React.useState(localStorage.getItem('username') || '');
   const [temp, setTemp] = React.useState(fullName);
 
   React.useEffect(() => {
@@ -29,8 +30,17 @@ function Name() {
   if(isEditing) {
     return (
       <form>
-        <label htmlFor="editingName">Full Name</label>
-        <input type="text" id="editingName" autoFocus name="fullName" value={temp} onChange={inputOnChange} />
+        <div className="form-input">
+          <label htmlFor="editingName">Full Name</label>
+          <input
+            className="fullname"
+            type="text"
+            id="editingName"
+            autoFocus
+            name="fullName"
+            value={temp}
+            onChange={inputOnChange} />
+        </div>
         <button type="submit" onClick={handleSubmit}>SAVE</button>
         <button type="reset" onClick={cancelEditing}>CANCEL</button>
       </form>
@@ -38,7 +48,7 @@ function Name() {
   }
   else {
     return (
-      <button type="button" onClick={toggleEditing}>{fullName}</button>
+      <button className="fullname" type="button" onClick={toggleEditing}>{fullName? fullName:'e.g. Full Name'}</button>
     )
   }
 }

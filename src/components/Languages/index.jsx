@@ -45,7 +45,7 @@ function Languages() {
     }
     else {
       return (
-        <button type="button" onClick={toggleAdding}>ADD LANGUAGE</button>
+        <p><button type="button" onClick={toggleAdding}>ADD LANGUAGE</button></p>
       );
     }
   }

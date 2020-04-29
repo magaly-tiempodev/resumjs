@@ -43,7 +43,7 @@ function TechnicalProfile() {
     }
     else {
       return (
-        <button type="button" onClick={toggleAdding}>ADD TECHNICAL ITEM</button>
+        <button type="button" onClick={toggleAdding}>ADD PROFILE ITEM</button>
       )
     }
   }
@@ -104,7 +104,6 @@ function TechnicalProfile() {
     function handleRemove() {
       setList(list.filter(item => item.id !== id));
     }
-
     return (
       <button type="button" onClick={handleRemove}>Remove</button>
     )
@@ -123,7 +122,7 @@ function TechnicalProfile() {
               <RemoveTech id={tech.id} />
             </li>
           ))}
-          <li>
+          <li className="editable-content">
             <AddTech />
           </li>
           <li className="editable-content">

@@ -38,10 +38,10 @@ function TechSummary() {
   }
   else {
     return (
-      <>
+      <React.Fragment>
         <b>Technology Summary:</b>
-        <button type="button" onClick={toggleEditing}>{techSummary}</button>
-      </>
+        <button type="button" onClick={toggleEditing}>{techSummary?techSummary:'e.g. JavaScript, .NET, PHP, AWS'}</button>
+      </React.Fragment>
     )
   }
 }

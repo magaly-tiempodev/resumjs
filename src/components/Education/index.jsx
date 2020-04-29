@@ -148,7 +148,6 @@ function Education() {
               <RemoveEducation id={education.id} />
             </p>
           ))}
-
         </div>
         <AddEducation />
       </div>
