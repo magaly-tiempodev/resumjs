@@ -1,5 +1,4 @@
 import React from 'react';
-import './Name.css';
 
 function Name() {
   const [isEditing, setEditing] = React.useState(false);
@@ -30,7 +29,7 @@ function Name() {
   if(isEditing) {
     return (
       <form>
-        <div className="form-input">
+        <div className="form-input fullname-form-input">
           <label htmlFor="editingName">Full Name</label>
           <input
             className="fullname"

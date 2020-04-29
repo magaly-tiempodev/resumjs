@@ -29,8 +29,10 @@ function TechSummary() {
   if(isEditing) {
     return (
       <form>
-        <label htmlFor="techSummary">Technology Summary</label>
-        <input type="text" id="techSummary" autoFocus name="temp" value={temp} onChange={inputOnChange} />
+        <div className="form-input">
+          <label htmlFor="techSummary">Technology Summary</label>
+          <input className="content" type="text" id="techSummary" autoFocus name="temp" value={temp} onChange={inputOnChange} />
+        </div>
         <button type="submit" onClick={handleSubmit}>SAVE</button>
         <button type="reset" onClick={cancelEditing}>CANCEL</button>
       </form>
@@ -38,10 +40,7 @@ function TechSummary() {
   }
   else {
     return (
-      <React.Fragment>
-        <b>Technology Summary:</b>
-        <button type="button" onClick={toggleEditing}>{techSummary?techSummary:'e.g. JavaScript, .NET, PHP, AWS'}</button>
-      </React.Fragment>
+      <button className="content" type="button" onClick={toggleEditing}><b>Technology Summary:</b> {techSummary?techSummary:'e.g. JavaScript, .NET, PHP, AWS'}</button>
     )
   }
 }

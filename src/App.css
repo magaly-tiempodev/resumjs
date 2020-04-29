@@ -78,26 +78,98 @@ input:focus {
   flex: 5 0;
 }
 
-.editable-container:hover>.editable-content {
-  color: #ccc;
+.form-input {
+  display: flex;
+  flex-direction: column;
+}
+.form-input label {
+  font-size: 11px;
+  position: relative;
+  top: 0;
+  color: #999;
+}
+.form-input input {
+  position: relative;
+  top: 0;
+  border-bottom: 1px solid #999;
 }
 
-.editable-container:hover>.editable-content:hover {
-  color: #222;
+.fullname {
+  background: transparent;
+  border: none;
+  cursor: text;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+}
+
+.fullname-form-input label,
+.fullname-form-input input {
+  top: -13px !important;
+}
+
+
+.add,
+.remove {
+  background: var(--primary-color);
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+.add {
+  background: var(--primary-color);
+  color: white;
+  padding: 4px 20px;
+}
+.remove {
+  background: var(--alert-color);
+  color: white;
+  position: absolute;
+  margin-left: -23px;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+.content {
+  background: transparent;
+  border: none;
+  cursor: text;
+  font-family: Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.5em;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.editable-container:hover .editable-content {
+  opacity: .5;
+}
+
+.editable-container:hover .editable-content:hover {
+  opacity: 1;
+}
+
+.editable-container:hover .editable-content:hover .remove {
+  display: flex;
 }
 
 .editable-container>.editable-content {
   transition: color .3s cubic-bezier(.3, .3, 1, 1);
 }
 
-.editable-container>.editable-content .btn {
-  opacity: 0;
-}
-
-.editable-container>.editable-content:hover .btn {
-  opacity: 1;
-}
 
 @media print {
-
+  .add-content,
+  .add,
+  .remove {
+    display: none;
+  }
 }

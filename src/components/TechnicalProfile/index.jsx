@@ -33,9 +33,10 @@ function TechnicalProfile() {
     if(isAdding) {
       return (
         <form>
-          <label htmlFor="addTech">Technical item</label>
-          <input id="addTech" name="tech" onChange={handleChange} />
-
+          <div className="form-input">
+            <label htmlFor="addTech">Technical item</label>
+            <input className="content" id="addTech" name="tech" onChange={handleChange} />
+          </div>
           <button type="submit" onClick={handleSubmit}>SAVE</button>
           <button type="reset" onClick={toggleAdding}>CANCEL</button>
         </form>
@@ -43,7 +44,7 @@ function TechnicalProfile() {
     }
     else {
       return (
-        <button type="button" onClick={toggleAdding}>ADD PROFILE ITEM</button>
+        <button className="add" type="button" onClick={toggleAdding}>ADD PROFILE ITEM</button>
       )
     }
   }
@@ -85,9 +86,10 @@ function TechnicalProfile() {
     if(isEditing) {
       return (
         <form>
-          <label htmlFor="addTech">Technical item</label>
-          <input id="addTech" name="tech" value={formData.tech} onChange={handleEditing} />
-
+          <div className="form-input">
+            <label htmlFor="editTech">Technical item</label>
+            <input className="content" id="editTech" name="tech" value={formData.tech} onChange={handleEditing} />
+          </div>
           <button type="submit" onClick={handleSubmit}>SAVE</button>
           <button type="reset" onClick={cancelEditing}>CANCEL</button>
         </form>
@@ -95,7 +97,7 @@ function TechnicalProfile() {
     }
     else {
       return (
-        <button type="button" onClick={toggleEditing}>{tech.tech}</button>
+        <button className="content" type="button" onClick={toggleEditing}>{tech.tech}</button>
       )
     }
   }
@@ -105,7 +107,7 @@ function TechnicalProfile() {
       setList(list.filter(item => item.id !== id));
     }
     return (
-      <button type="button" onClick={handleRemove}>Remove</button>
+      <button className="remove" type="button" onClick={handleRemove}>&times;</button>
     )
   }
 
@@ -118,11 +120,11 @@ function TechnicalProfile() {
         <ul className="editable-container">
           {list.map(tech => (
             <li className="editable-content" key={tech.id}>
-              <EditTech tech={tech} />
               <RemoveTech id={tech.id} />
+              <EditTech tech={tech} />
             </li>
           ))}
-          <li className="editable-content">
+          <li className="add-content">
             <AddTech />
           </li>
           <li className="editable-content">
