@@ -23,7 +23,7 @@ body {
 
 body {
   font-family: Roboto, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   margin: 0;
   padding: 0;
 }
@@ -41,6 +41,8 @@ input,
 textarea {
   border-bottom: 1px solid #ccc !important;
 }
+
+button:focus,
 input:focus,
 textarea:focus {
   outline-offset: 0px !important;
@@ -79,7 +81,8 @@ textarea:focus {
 }
 
 .col-p {
-  padding-left: 30px;
+  flex: 0 1 25%;
+  margin-left: 5%;
 }
 
 .col-title {
@@ -107,8 +110,8 @@ textarea:focus {
 .remove {
   background: var(--alert-color);
   color: white;
+  margin-left: -25px;
   position: absolute;
-  margin-left: -23px;
   padding: 0;
   width: 20px;
   height: 20px;
@@ -121,12 +124,19 @@ textarea:focus {
   border: none;
   cursor: text;
   font-family: Roboto, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.5em;
-  margin: 0;
-  padding: 0;
   text-align: left;
+  width: 100%;
+  margin-left: -20px;
+  padding-left: 20px;
 }
+input.content,
+textarea.content {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 .content.bold,
 .content .bold {
   font-weight: bold;
@@ -150,6 +160,14 @@ textarea:focus {
 
 
 @media print {
+  body {
+    font-family: Roboto, Helvetica, sans-serif;
+    font-size: 10px;
+  }
+  .content {
+    font-size: 10px;
+    line-height: 1.3em;
+  }
   .add-content,
   .add,
   .remove {
