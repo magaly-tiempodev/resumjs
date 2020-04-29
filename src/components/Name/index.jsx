@@ -24,7 +24,7 @@ function Name() {
   }
 
   function handleSubmit(e) {
-    setFullName(temp);
+    setFullName(temp.trim());
   }
 
   if(isEditing) {
