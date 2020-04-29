@@ -1,4 +1,5 @@
 import React from 'react';
+import './Courses.css';
 
 function Courses() {
   const [list, setList] = React.useState(JSON.parse(localStorage.getItem('courses')) || []);
@@ -32,15 +33,22 @@ function Courses() {
     if(isAdding) {
       return (
         <form>
-          <label htmlFor="addCourse">Course Name</label>
-          <input id="addCourse" name="course" onChange={handleChange} />
-
-          <label htmlFor="addSchool">School</label>
-          <input id="addSchool" name="school" onChange={handleChange} />
-
-          <label htmlFor="addYear">Year</label>
-          <input id="addYear" name="year" onChange={handleChange} />
-
+          <div className="course-form">
+            <div className="course-form-input">
+              <label htmlFor="addCourse">Course Name</label>
+              <input className="content" id="addCourse" name="course" onChange={handleChange} />
+            </div>
+          </div>
+          <div className="course-form">
+            <div className="course-form-input">
+              <label htmlFor="addSchool">School</label>
+              <input className="content" id="addSchool" name="school" onChange={handleChange} />
+            </div>
+            <div className="course-form-input">
+              <label htmlFor="addYear">Year</label>
+              <div className="course-form-year">(<input className="content" id="addYear" name="year" onChange={handleChange} />)</div>
+            </div>
+          </div>
           <button type="submit" onClick={handleSubmit}>SAVE</button>
           <button type="reset" onClick={toggleAdding}>CANCEL</button>
         </form>
@@ -48,7 +56,7 @@ function Courses() {
     }
     else {
       return (
-        <button type="button" onClick={toggleAdding}>ADD COURSE</button>
+        <button className="add" type="button" onClick={toggleAdding}>ADD COURSE</button>
       )
     }
   }
@@ -90,15 +98,22 @@ function Courses() {
     if(isEditing) {
       return (
         <form>
-          <label htmlFor="addCourse">Course Name</label>
-          <input id="addCourse" name="course" value={formData.course} onChange={handleEditing} />
-
-          <label htmlFor="addSchool">School</label>
-          <input id="addSchool" name="school" value={formData.school} onChange={handleEditing} />
-
-          <label htmlFor="addYear">Year</label>
-          <input id="addYear" name="year" value={formData.year} onChange={handleEditing} />
-
+          <div className="course-form">
+            <div className="course-form-input">
+              <label htmlFor="addCourse">Course Name</label>
+              <input className="content" id="addCourse" name="course" value={formData.course} onChange={handleEditing} />
+            </div>
+          </div>
+          <div className="course-form">
+            <div className="course-form-input">
+              <label htmlFor="addSchool">School</label>
+              <input className="content" id="addSchool" name="school" value={formData.school} onChange={handleEditing} />
+            </div>
+            <div className="course-form-input">
+              <label htmlFor="addYear">Year</label>
+              <div className="course-form-year">(<input className="content" id="addYear" name="year" value={formData.year} onChange={handleEditing} />)</div>
+            </div>
+          </div>
           <button type="submit" onClick={handleSubmit}>SAVE</button>
           <button type="reset" onClick={cancelEditing}>CANCEL</button>
         </form>
@@ -106,7 +121,10 @@ function Courses() {
     }
     else {
       return (
-        <button type="button" onClick={toggleEditing}><b>{course.course}</b><br />{course.school} ({course.year})</button>
+        <button className="content" type="button" onClick={toggleEditing}>
+          <b>{course.course}</b><br />
+          {course.school} ({course.year})
+        </button>
       )
     }
   }
@@ -115,9 +133,8 @@ function Courses() {
     function handleRemove() {
       setList(list.filter(item => item.id !== id));
     }
-
     return (
-      <button type="button" onClick={handleRemove}>Remove</button>
+      <button className="remove" type="button" onClick={handleRemove}>&times;</button>
     )
   }
 
@@ -130,8 +147,8 @@ function Courses() {
         <div className="editable-container">
           {list.map(course => (
             <p className="editable-content" key={course.id}>
-              <EditCourse course={course} />
               <RemoveCourse id={course.id} />
+              <EditCourse course={course} />
             </p>
           ))}
         </div>
