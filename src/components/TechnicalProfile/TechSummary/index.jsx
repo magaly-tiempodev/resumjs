@@ -29,9 +29,9 @@ function TechSummary() {
   if(isEditing) {
     return (
       <form>
-        <div className="form-input">
+        <div className="profile-form-input">
           <label htmlFor="techSummary">Technology Summary</label>
-          <input className="content" type="text" id="techSummary" autoFocus name="temp" value={temp} onChange={inputOnChange} />
+          <textarea rows="4" className="content" type="text" id="techSummary" autoFocus name="temp" value={temp} onChange={inputOnChange} />
         </div>
         <button type="submit" onClick={handleSubmit}>SAVE</button>
         <button type="reset" onClick={cancelEditing}>CANCEL</button>

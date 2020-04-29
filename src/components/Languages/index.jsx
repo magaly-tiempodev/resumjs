@@ -1,4 +1,5 @@
 import React from 'react';
+import './Languages.css';
 
 function Languages() {
   const [list, setList] = React.useState(JSON.parse(localStorage.getItem('languages')) || []);
@@ -32,12 +33,23 @@ function Languages() {
     if(isAdding) {
       return (
         <form>
-          <label htmlFor="addLanguage">Language</label>
-          <input id="addLanguage" autoFocus name="language" onChange={handleChange} />
-
-          <label htmlFor="addLevel">Level</label>
-          <input id="addLevel" name="level" onChange={handleChange} />
-
+          <div className="language-form">
+            <div className="language-form-input">
+              <label htmlFor="addLanguage">Language</label>
+              <input className="content" id="addLanguage" autoFocus name="language" onChange={handleChange} />
+            </div>
+            <div className="language-form-input">
+              <label htmlFor="addLevel">Level</label>
+              <input className="content" id="addLevel" list="adddatalevel" name="level" onChange={handleChange} />
+              <datalist id="adddatalevel">
+                <option value="Native or bilingual" />
+                <option value="Full professional" />
+                <option value="Professional" />
+                <option value="Limited" />
+                <option value="Elementary" />
+              </datalist>
+            </div>
+          </div>
           <button type="submit" onClick={handleSubmit}>SAVE</button>
           <button type="reset" onClick={toggleAdding}>CANCEL</button>
         </form>
@@ -45,7 +57,7 @@ function Languages() {
     }
     else {
       return (
-        <p><button type="button" onClick={toggleAdding}>ADD LANGUAGE</button></p>
+        <p><button className="add" type="button" onClick={toggleAdding}>ADD LANGUAGE</button></p>
       );
     }
   }
@@ -87,12 +99,23 @@ function Languages() {
     if(isEditing) {
       return (
         <form>
-          <label htmlFor="editLanguage">Language</label>
-          <input id="editLanguage" autoFocus name="language" value={formData.language} onChange={handleEditing}/>
-
-          <label htmlFor="editLevel">Level</label>
-          <input id="editLevel" name="level" value={formData.level} onChange={handleEditing}/>
-
+          <div className="language-form">
+            <div className="language-form-input">
+              <label htmlFor="editLanguage">Language</label>
+              <input className="content" id="editLanguage" autoFocus name="language" value={formData.language} onChange={handleEditing}/>
+            </div>
+            <div className="language-form-input">
+              <label htmlFor="editLevel">Level</label>
+              <input className="content" id="editLevel" list="datalevel" name="level" value={formData.level} onChange={handleEditing}/>
+              <datalist id="datalevel">
+                <option value="Native or bilingual" />
+                <option value="Full professional" />
+                <option value="Professional" />
+                <option value="Limited" />
+                <option value="Elementary" />
+              </datalist>
+            </div>
+          </div>
           <button type="submit" onClick={handleSubmit}>SAVE</button>
           <button type="reset" onClick={cancelEditing}>CANCEL</button>
         </form>
@@ -100,7 +123,7 @@ function Languages() {
     }
     else {
       return (
-        <button type="button" onClick={toggleEditing}><b>{lang.language}</b>: {lang.level}</button>
+        <button className="content" type="button" onClick={toggleEditing}><b>{lang.language}</b>: {lang.level}</button>
       );
     }
   }
@@ -109,9 +132,8 @@ function Languages() {
     function handleRemove() {
       setList(list.filter(item => item.id !== id));
     }
-
     return (
-      <button type="button" onClick={handleRemove}>Remove</button>
+      <button className="remove" type="button" onClick={handleRemove}>&times;</button>
     )
   }
 
@@ -124,12 +146,12 @@ function Languages() {
         <div className="editable-container">
           {list.map(lang => (
             <div className="editable-content" key={lang.id}>
-              <EditLanguage lang={lang} />
               <RemoveLanguage id={lang.id} />
+              <EditLanguage lang={lang} />
             </div>
           ))}
         </div>
-        <AddLanguage />
+        <AddLanguage /><br/><br/><br/><br/>
       </div>
     </div>
   );

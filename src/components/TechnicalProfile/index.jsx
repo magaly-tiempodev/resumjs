@@ -1,5 +1,6 @@
 import React from 'react';
 import TechSummary from './TechSummary';
+import './TechnicalProfile.css';
 
 function TechnicalProfile() {
   const [list, setList] = React.useState(JSON.parse(localStorage.getItem('technical')) || []);
@@ -33,9 +34,9 @@ function TechnicalProfile() {
     if(isAdding) {
       return (
         <form>
-          <div className="form-input">
+          <div className="profile-form-input">
             <label htmlFor="addTech">Technical item</label>
-            <input className="content" id="addTech" name="tech" onChange={handleChange} />
+            <textarea rows="2" className="content" id="addTech" name="tech" onChange={handleChange} />
           </div>
           <button type="submit" onClick={handleSubmit}>SAVE</button>
           <button type="reset" onClick={toggleAdding}>CANCEL</button>
@@ -86,9 +87,9 @@ function TechnicalProfile() {
     if(isEditing) {
       return (
         <form>
-          <div className="form-input">
+          <div className="profile-form-input">
             <label htmlFor="editTech">Technical item</label>
-            <input className="content" id="editTech" name="tech" value={formData.tech} onChange={handleEditing} />
+            <textarea rows="2" className="content" id="editTech" name="tech" value={formData.tech} onChange={handleEditing} />
           </div>
           <button type="submit" onClick={handleSubmit}>SAVE</button>
           <button type="reset" onClick={cancelEditing}>CANCEL</button>

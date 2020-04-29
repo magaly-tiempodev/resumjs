@@ -1,0 +1,20 @@
+.fullname {
+  background: transparent;
+  border: none;
+  cursor: text;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+}
+
+.fullname-form-input {
+  display: flex;
+  flex-direction: column;
+}
+.fullname-form-input label,
+.fullname-form-input input {
+  position: relative;
+  top: -13px !important;
+}

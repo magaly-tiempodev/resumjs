@@ -33,7 +33,16 @@ ul {
   margin: 5px 0 0;
 }
 
-input:focus {
+label {
+  font-size: 11px;
+  color: #999;
+}
+input,
+textarea {
+  border-bottom: 1px solid #ccc !important;
+}
+input:focus,
+textarea:focus {
   outline-offset: 0px !important;
   outline: 0px !important;
 }
@@ -77,39 +86,6 @@ input:focus {
 .col-detail {
   flex: 5 0;
 }
-
-.form-input {
-  display: flex;
-  flex-direction: column;
-}
-.form-input label {
-  font-size: 11px;
-  position: relative;
-  top: 0;
-  color: #999;
-}
-.form-input input {
-  position: relative;
-  top: 0;
-  border-bottom: 1px solid #999;
-}
-
-.fullname {
-  background: transparent;
-  border: none;
-  cursor: text;
-  font-size: 32px;
-  font-weight: bold;
-  margin: 0;
-  padding: 0;
-  text-transform: capitalize;
-}
-
-.fullname-form-input label,
-.fullname-form-input input {
-  top: -13px !important;
-}
-
 
 .add,
 .remove {

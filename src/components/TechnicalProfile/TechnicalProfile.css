@@ -1,0 +1,9 @@
+.profile-form-input {
+  display: flex;
+  flex-direction: column;
+}
+.profile-form-input label,
+.profile-form-input textarea {
+  position: relative;
+  top: 0;
+}
