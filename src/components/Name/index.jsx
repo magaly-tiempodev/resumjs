@@ -48,7 +48,7 @@ function Name() {
   }
   else {
     return (
-      <button className="fullname" type="button" onClick={toggleEditing}>{fullName? fullName:'e.g. Full Name'}</button>
+      <button className="fullname" type="button" onClick={toggleEditing}>{fullName? fullName:'Full Name'}</button>
     )
   }
 }
