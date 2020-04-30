@@ -3,11 +3,11 @@ import './Name.css';
 
 function Name() {
   const [isEditing, setEditing] = React.useState(false);
-  const [fullName, setFullName] = React.useState(localStorage.getItem('username') || '');
+  const [fullName, setFullName] = React.useState(localStorage.getItem('tiempodev-resume-username') || '');
   const [temp, setTemp] = React.useState(fullName);
 
   React.useEffect(() => {
-    localStorage.setItem('username', fullName);
+    localStorage.setItem('tiempodev-resume-username', fullName);
   });
 
   function toggleEditing() {

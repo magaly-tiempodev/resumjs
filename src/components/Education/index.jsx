@@ -2,10 +2,10 @@ import React from 'react';
 import './Education.css';
 
 function Education() {
-  const [list, setList] = React.useState(JSON.parse(localStorage.getItem('education')) || []);
+  const [list, setList] = React.useState(JSON.parse(localStorage.getItem('tiempodev-resume-education')) || []);
 
   React.useEffect(() => {
-    localStorage.setItem('education', JSON.stringify(list));
+    localStorage.setItem('tiempodev-resume-education', JSON.stringify(list));
   });
 
   function AddEducation() {

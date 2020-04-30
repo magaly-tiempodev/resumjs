@@ -2,11 +2,11 @@ import React from 'react';
 
 function TechSummary() {
   const [isEditing, setEditing] = React.useState(false);
-  const [techSummary, setTechSummary] = React.useState(localStorage.getItem('techsummary') || '');
+  const [techSummary, setTechSummary] = React.useState(localStorage.getItem('tiempodev-resume-techsummary') || '');
   const [temp, setTemp] = React.useState(techSummary);
 
   React.useEffect(() => {
-    localStorage.setItem('techsummary', techSummary);
+    localStorage.setItem('tiempodev-resume-techsummary', techSummary);
   });
 
   function toggleEditing() {

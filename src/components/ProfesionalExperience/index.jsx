@@ -2,10 +2,10 @@ import React from 'react';
 import './ProfesionalExperience.css';
 
 function ProfesionalExperience () {
-  const [list, setList] = React.useState(JSON.parse(localStorage.getItem('experience')) || []);
+  const [list, setList] = React.useState(JSON.parse(localStorage.getItem('tiempodev-resume-experience')) || []);
 
   React.useEffect(() => {
-    localStorage.setItem('experience', JSON.stringify(list));
+    localStorage.setItem('tiempodev-resume-experience', JSON.stringify(list));
   });
 
   function AddJobExperience() {

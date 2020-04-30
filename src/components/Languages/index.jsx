@@ -2,10 +2,10 @@ import React from 'react';
 import './Languages.css';
 
 function Languages() {
-  const [list, setList] = React.useState(JSON.parse(localStorage.getItem('languages')) || []);
+  const [list, setList] = React.useState(JSON.parse(localStorage.getItem('tiempodev-resume-languages')) || []);
 
   React.useEffect(() => {
-    localStorage.setItem('languages', JSON.stringify(list));
+    localStorage.setItem('tiempodev-resume-languages', JSON.stringify(list));
   });
 
   function AddLanguage() {

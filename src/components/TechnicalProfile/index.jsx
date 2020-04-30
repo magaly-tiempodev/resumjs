@@ -3,10 +3,10 @@ import TechSummary from './TechSummary';
 import './TechnicalProfile.css';
 
 function TechnicalProfile() {
-  const [list, setList] = React.useState(JSON.parse(localStorage.getItem('technical')) || []);
+  const [list, setList] = React.useState(JSON.parse(localStorage.getItem('tiempodev-resume-tech')) || []);
 
   React.useEffect(() => {
-    localStorage.setItem('technical', JSON.stringify(list));
+    localStorage.setItem('tiempodev-resume-tech', JSON.stringify(list));
   });
 
   function AddTech() {
