@@ -32,7 +32,7 @@ function Languages() {
 
     if(isAdding) {
       return (
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="language-form">
             <div className="language-form-input">
               <label htmlFor="addLanguage">Language</label>
@@ -40,14 +40,12 @@ function Languages() {
             </div>
             <div className="language-form-input">
               <label htmlFor="addLevel">Level</label>
-              <input className="content bold" id="addLevel" list="adddatalevel" name="level" onChange={handleChange} />
-              <datalist id="adddatalevel">
-                <option value="Native or bilingual" />
-                <option value="Full professional" />
-                <option value="Professional" />
-                <option value="Limited" />
-                <option value="Elementary" />
-              </datalist>
+              <select id="addLevel" name="level" onChange={handleChange} >
+                <option value="Native">Native</option>
+                <option value="Fluent">Fluent</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Elementary">Elementary</option>
+              </select>
             </div>
           </div>
           <button type="submit" onClick={handleSubmit}>SAVE</button>
@@ -98,7 +96,7 @@ function Languages() {
 
     if(isEditing) {
       return (
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="language-form">
             <div className="language-form-input">
               <label htmlFor="editLanguage">Language</label>
@@ -106,14 +104,12 @@ function Languages() {
             </div>
             <div className="language-form-input">
               <label htmlFor="editLevel">Level</label>
-              <input className="content" id="editLevel" list="datalevel" name="level" value={formData.level} onChange={handleEditing}/>
-              <datalist id="datalevel">
-                <option value="Native or bilingual" />
-                <option value="Full professional" />
-                <option value="Professional" />
-                <option value="Limited" />
-                <option value="Elementary" />
-              </datalist>
+              <select name="level" value={formData.level} onChange={handleEditing} >
+                <option value="Native">Native</option>
+                <option value="Fluent">Fluent</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Elementary">Elementary</option>
+              </select>
             </div>
           </div>
           <button type="submit" onClick={handleSubmit}>SAVE</button>

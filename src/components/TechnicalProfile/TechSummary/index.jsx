@@ -23,12 +23,14 @@ function TechSummary() {
   }
 
   function handleSubmit(e) {
+    e.preventDefault();
     setTechSummary(temp)
+    setEditing( !isEditing );
   }
 
   if(isEditing) {
     return (
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="profile-form-input">
           <label htmlFor="techSummary">Technology Summary</label>
           <textarea rows="4" className="content" type="text" id="techSummary" autoFocus name="temp" value={temp} onChange={inputOnChange} />

@@ -32,7 +32,7 @@ function Education() {
 
     if(isAdding) {
       return (
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="education-form">
             <div className="education-form-input">
               <label htmlFor="addDegree">Degree</label>
@@ -111,7 +111,7 @@ function Education() {
 
     if(isEditing) {
       return (
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="education-form">
             <div className="education-form-input">
               <label htmlFor="addDegree">Degree</label>
@@ -148,10 +148,11 @@ function Education() {
       )
     }
     else {
+      let educationDate = education.start ? education.end ? "( "+education.start+" - "+education.end+" )" : "( "+education.start+" )" : "";
       return (
         <button className="content" type="button" onClick={toggleEditing}>
           <b>{education.degree}</b> in '{education.title}'
-          <br />{education.school} ({education.start} - {education.end})
+          <br />{education.school} {educationDate}
         </button>
       )
     }

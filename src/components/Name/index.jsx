@@ -24,12 +24,14 @@ function Name() {
   }
 
   function handleSubmit(e) {
+    e.preventDefault();
     setFullName(temp.trim());
+    setEditing( !isEditing );
   }
 
   if(isEditing) {
     return (
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="fullname-form-input">
           <label htmlFor="editingName">Full Name</label>
           <input

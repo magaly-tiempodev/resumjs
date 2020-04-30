@@ -32,7 +32,7 @@ function Courses() {
 
     if(isAdding) {
       return (
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="course-form">
             <div className="course-form-input">
               <label htmlFor="addCourse">Course Name</label>
@@ -97,7 +97,7 @@ function Courses() {
 
     if(isEditing) {
       return (
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="course-form">
             <div className="course-form-input">
               <label htmlFor="addCourse">Course Name</label>
@@ -123,7 +123,7 @@ function Courses() {
       return (
         <button className="content" type="button" onClick={toggleEditing}>
           <b>{course.course}</b><br />
-          {course.school} ({course.year})
+          {course.school} {course.year ? "( "+course.year+" )" : ""}
         </button>
       )
     }

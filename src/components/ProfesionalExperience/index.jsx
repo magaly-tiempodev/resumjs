@@ -39,7 +39,7 @@ function ProfesionalExperience () {
 
     if(isAdding) {
       return (
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="experience-form m">
             <div className="experience-form">
               <div className="experience-form-input">
@@ -77,7 +77,7 @@ function ProfesionalExperience () {
           </div>
           <div className="experience-form-sub">
             <div className="experience-form-input">
-              <label>Tecnnology</label>
+              <label>Used Technologies</label>
               <input type="text" className="content" name="tech" onChange={handleChange} />
             </div>
           </div>
@@ -143,7 +143,7 @@ function ProfesionalExperience () {
 
     if(isEditing) {
       return (
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="experience-form m">
             <div className="experience-form">
               <div className="experience-form-input">
@@ -181,7 +181,7 @@ function ProfesionalExperience () {
           </div>
           <div className="experience-form-sub">
             <div className="experience-form-input">
-              <label>Tecnnology</label>
+              <label>Used Technologies</label>
               <input type="text" className="content" name="tech" value={formData.tech} onChange={handleEditing} />
             </div>
           </div>
@@ -202,7 +202,7 @@ function ProfesionalExperience () {
           <div><b>{experience.position}</b></div>
           <ul>
             {experiencelist}
-            <li><b>Tecnnology:</b> {experience.tech}</li>
+            <li><b>Used Technologies:</b> {experience.tech}</li>
           </ul>
         </button>
       )

@@ -38,13 +38,16 @@ label {
   color: #999;
 }
 input,
-textarea {
+textarea,
+select {
+  border-radius: 0;
   border-bottom: 1px solid #ccc !important;
 }
 
 button:focus,
 input:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
   outline-offset: 0px !important;
   outline: 0px !important;
 }
@@ -95,7 +98,6 @@ textarea:focus {
 
 .add,
 .remove {
-  background: var(--primary-color);
   border: none;
   cursor: pointer;
   font-size: 12px;
@@ -137,6 +139,22 @@ textarea.content {
   padding: 0 !important;
 }
 
+select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #333;
+  font-size: 13px;
+  line-height: 1.5em;
+  padding-right: 30px;
+}
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+
 .content.bold,
 .content .bold {
   font-weight: bold;
@@ -164,7 +182,8 @@ textarea.content {
     font-family: Roboto, Helvetica, sans-serif;
     font-size: 10px;
   }
-  .content {
+  .content,
+  select {
     font-size: 10px;
     line-height: 1.3em;
   }

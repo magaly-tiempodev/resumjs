@@ -33,7 +33,7 @@ function TechnicalProfile() {
 
     if(isAdding) {
       return (
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="profile-form-input">
             <label htmlFor="addTech">Technical item</label>
             <textarea rows="2" className="content" id="addTech" name="tech" onChange={handleChange} />
@@ -86,7 +86,7 @@ function TechnicalProfile() {
 
     if(isEditing) {
       return (
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="profile-form-input">
             <label htmlFor="editTech">Technical item</label>
             <textarea rows="2" className="content" id="editTech" name="tech" value={formData.tech} onChange={handleEditing} />
