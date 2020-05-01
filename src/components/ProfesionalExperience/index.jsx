@@ -44,45 +44,51 @@ function ProfesionalExperience () {
             <div className="experience-form">
               <div className="experience-form-input">
                 <label>Start Date</label>
-                <input className="content bold" type="text" name="start" onChange={handleChange} />
+                <input className="content bold" type="text" name="start" onChange={handleChange} placeholder="e.g. November 2019" />
               </div>
               <div className="experience-form-text">-</div>
               <div className="experience-form-input">
                 <label>End Date</label>
-                <input className="content bold" type="text" name="end" onChange={handleChange} />
+                <input className="content bold" type="text" name="end" onChange={handleChange} placeholder="Current" />
               </div>
             </div>
             <div className="experience-form-text"></div>
             <div className="experience-form-input">
               <label>Company Name</label>
-              <input className="content bold" type="text" name="company" onChange={handleChange} />
+              <input className="content bold" type="text" name="company" onChange={handleChange} placeholder="Tiempo Development" />
             </div>
             <div className="experience-form-text"></div>
             <div className="experience-form-input">
               <label>Company Location</label>
-              <input className="content bold" type="text" name="location" onChange={handleChange} />
+              <input className="content bold" type="text" name="location" onChange={handleChange} placeholder="Guadalajara, Jalisco, MX" />
             </div>
           </div>
           <div className="experience-form">
             <div className="experience-form-input">
               <label>Position</label>
-              <input className="content bold" type="text" name="position" onChange={handleChange} />
+              <input className="content bold" type="text" name="position" onChange={handleChange} placeholder="Software Engineer II" />
             </div>
           </div>
           <div className="experience-form-sub">
             <div className="experience-form-input">
               <label>Experience</label>
-              <textarea rows="5" className="content" name="exp" onChange={handleChange} />
+              <textarea
+                rows="5"
+                className="content"
+                name="exp"
+                onChange={handleChange}
+                placeholder={'Bootcamp on Python for data science. \nProgramming for the Web with JavaScript. \nAlgorithm Design and Analysis.'}
+                />
             </div>
           </div>
           <div className="experience-form-sub">
             <div className="experience-form-input">
               <label>Used Technologies</label>
-              <input type="text" className="content" name="tech" onChange={handleChange} />
+              <input type="text" className="content" name="tech" onChange={handleChange} placeholder="Python3, Flask, Jupyter Notebook, Pandas, JavaScript, ReactJs." />
             </div>
           </div>
-          <button type="submit" onClick={handleSubmit}>SAVE</button>
-          <button type="reset" onClick={toggleAdding}>CANCEL</button>
+          <button className="save" type="submit" onClick={handleSubmit}>SAVE</button>
+          <button className="cancel" type="reset" onClick={toggleAdding}>CANCEL</button>
         </form>
       )
     }
@@ -91,7 +97,7 @@ function ProfesionalExperience () {
         <React.Fragment>
           { list.length === 0 ?
             <div onClick={toggleAdding}>
-              <div className="content">
+              <div className="content eg">
                 <div className="row bold">
                   <div className="col">e.g. November 2019 - Current</div>
                   <div className="col-p">Tiempo Development</div>
@@ -100,7 +106,8 @@ function ProfesionalExperience () {
                 <div><b>Software Engineer II</b></div>
                 <ul>
                   <li>Bootcamp on Python for data science.</li>
-                  <li>Programming for the Web with JavaScript. Algorithm Design and Analysis.</li>
+                  <li>Programming for the Web with JavaScript.</li>
+                  <li>Algorithm Design and Analysis.</li>
                   <li><b>Used Technologies:</b> Python3, Flask, Jupyter Notebook, Pandas, JavaScript, ReactJs.</li>
                 </ul>
               </div>
@@ -206,8 +213,8 @@ function ProfesionalExperience () {
               <input type="text" className="content" name="tech" value={formData.tech} onChange={handleEditing} />
             </div>
           </div>
-          <button type="submit" onClick={handleSubmit}>SAVE</button>
-          <button type="reset" onClick={cancelEditing}>CANCEL</button>
+          <button className="save" type="submit" onClick={handleSubmit}>SAVE</button>
+          <button className="cancel" type="reset" onClick={cancelEditing}>CANCEL</button>
         </form>
       )
     }
