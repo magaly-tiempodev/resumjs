@@ -84,7 +84,7 @@ function ProfesionalExperience () {
           <div className="experience-form-sub">
             <div className="experience-form-input">
               <label>Used Technologies</label>
-              <input type="text" className="content" name="tech" onChange={handleChange} placeholder="Python3, Flask, Jupyter Notebook, Pandas, JavaScript, ReactJs." />
+              <input type="text" className="content" name="tech" onChange={handleChange} placeholder="Python3, Flask, Jupyter Notebook, Pandas, JavaScript, React." />
             </div>
           </div>
           <button className="save" type="submit" onClick={handleSubmit}>SAVE</button>
@@ -108,7 +108,7 @@ function ProfesionalExperience () {
                   <li>Bootcamp on Python for data science.</li>
                   <li>Programming for the Web with JavaScript.</li>
                   <li>Algorithm Design and Analysis.</li>
-                  <li><b>Used Technologies:</b> Python3, Flask, Jupyter Notebook, Pandas, JavaScript, ReactJs.</li>
+                  <li><b>Used Technologies:</b> Python3, Flask, Jupyter Notebook, Pandas, JavaScript, React.</li>
                 </ul>
               </div>
               <p><button className="add" type="text">ADD EXPERIENCE</button></p>
