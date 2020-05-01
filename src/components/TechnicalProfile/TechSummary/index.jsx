@@ -33,16 +33,16 @@ function TechSummary() {
       <form onSubmit={handleSubmit}>
         <div className="profile-form-input">
           <label htmlFor="techSummary">Technology Summary</label>
-          <textarea rows="4" className="content" type="text" id="techSummary" autoFocus name="temp" value={temp} onChange={inputOnChange} />
+          <textarea rows="4" className="content" type="text" id="techSummary" autoFocus name="temp" value={temp} onChange={inputOnChange} placeholder="e.g. JavaScript, .NET, PHP, AWS" />
         </div>
-        <button type="submit" onClick={handleSubmit}>SAVE</button>
-        <button type="reset" onClick={cancelEditing}>CANCEL</button>
+        <button className="save" type="submit" onClick={handleSubmit}>SAVE</button>
+        <button className="cancel" type="reset" onClick={cancelEditing}>CANCEL</button>
       </form>
     )
   }
   else {
     return (
-      <button className="content" type="button" onClick={toggleEditing}><b>Technology Summary:</b> {techSummary?techSummary:'e.g. JavaScript, .NET, PHP, AWS'}</button>
+      <button className={"content" + (techSummary?"":" eg")} type="button" onClick={toggleEditing}><b>Technology Summary:</b> {techSummary?techSummary:'e.g. JavaScript, .NET, PHP, AWS'}</button>
     )
   }
 }

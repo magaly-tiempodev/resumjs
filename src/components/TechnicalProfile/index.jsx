@@ -36,10 +36,10 @@ function TechnicalProfile() {
         <form onSubmit={handleSubmit}>
           <div className="profile-form-input">
             <label htmlFor="addTech">Technical item</label>
-            <textarea rows="2" className="content" id="addTech" name="tech" onChange={handleChange} />
+            <textarea rows="2" className="content" id="addTech" name="tech" onChange={handleChange} placeholder="e.g. Software Engineer with 10+ years of experience in software development specializing in web applications, mostly in the client side along JavaScript libraries."/>
           </div>
-          <button type="submit" onClick={handleSubmit}>SAVE</button>
-          <button type="reset" onClick={toggleAdding}>CANCEL</button>
+          <button className="save" type="submit" onClick={handleSubmit}>SAVE</button>
+          <button className="cancel" type="reset" onClick={toggleAdding}>CANCEL</button>
         </form>
       )
     }
@@ -48,7 +48,7 @@ function TechnicalProfile() {
         <React.Fragment>
           { list.length === 0 ?
             <div onClick={toggleAdding}>
-              <li>e.g. Software Engineer with 10+ years of experience in software development specializing in web applications, mostly in the client side along JavaScript libraries.</li>
+              <div className="content eg">e.g. Software Engineer with 10+ years of experience in software development specializing in web applications, mostly in the client side along JavaScript libraries.</div>
               <button className="add" type="button">ADD PROFILE ITEM</button>
             </div>
             :
@@ -100,8 +100,8 @@ function TechnicalProfile() {
             <label htmlFor="editTech">Technical item</label>
             <textarea rows="2" className="content" id="editTech" name="tech" value={formData.tech} onChange={handleEditing} />
           </div>
-          <button type="submit" onClick={handleSubmit}>SAVE</button>
-          <button type="reset" onClick={cancelEditing}>CANCEL</button>
+          <button className="save" type="submit" onClick={handleSubmit}>SAVE</button>
+          <button className="cancel" type="reset" onClick={cancelEditing}>CANCEL</button>
         </form>
       )
     }
@@ -137,6 +137,8 @@ function TechnicalProfile() {
           <li className="add-content">
             <AddTech />
           </li>
+        </ul>
+        <ul className="editable-container">
           <li className="editable-content">
             <TechSummary />
           </li>
