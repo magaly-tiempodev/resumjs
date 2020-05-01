@@ -36,7 +36,7 @@ function Languages() {
           <div className="language-form">
             <div className="language-form-input">
               <label htmlFor="addLanguage">Language</label>
-              <input className="content" id="addLanguage" autoFocus name="language" onChange={handleChange} />
+              <input className="content bold" id="addLanguage" autoFocus name="language" onChange={handleChange} placeholder="e.g. Spanish" />
             </div>
             <div className="language-form-input">
               <label htmlFor="addLevel">Level</label>
@@ -48,8 +48,8 @@ function Languages() {
               </select>
             </div>
           </div>
-          <button type="submit" onClick={handleSubmit}>SAVE</button>
-          <button type="reset" onClick={toggleAdding}>CANCEL</button>
+          <button className="save" type="submit" onClick={handleSubmit}>SAVE</button>
+          <button className="cancel" type="reset" onClick={toggleAdding}>CANCEL</button>
         </form>
       );
     }
@@ -58,7 +58,7 @@ function Languages() {
         <React.Fragment>
           { list.length === 0 ?
             <div onClick={toggleAdding}>
-              <p className="content">
+              <p className="content eg">
                 <b>e.g. Spanish</b>: Native
               </p>
               <button className="add" type="button">ADD LANGUAGE</button>
@@ -123,8 +123,8 @@ function Languages() {
               </select>
             </div>
           </div>
-          <button type="submit" onClick={handleSubmit}>SAVE</button>
-          <button type="reset" onClick={cancelEditing}>CANCEL</button>
+          <button className="save" type="submit" onClick={handleSubmit}>SAVE</button>
+          <button className="cancel" type="reset" onClick={cancelEditing}>CANCEL</button>
         </form>
       );
     }
