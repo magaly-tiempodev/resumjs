@@ -36,21 +36,21 @@ function Courses() {
           <div className="course-form">
             <div className="course-form-input">
               <label htmlFor="addCourse">Course Name</label>
-              <input className="content bold" id="addCourse" name="course" onChange={handleChange} />
+              <input className="content bold" id="addCourse" name="course" onChange={handleChange} placeholder="e.g. Introduction to Python for data science"/>
             </div>
           </div>
           <div className="course-form">
             <div className="course-form-input">
               <label htmlFor="addSchool">School</label>
-              <input className="content" id="addSchool" name="school" onChange={handleChange} />
+              <input className="content" id="addSchool" name="school" onChange={handleChange} placeholder="DataCamp" />
             </div>
             <div className="course-form-input">
               <label htmlFor="addYear">Year</label>
-              <div className="course-form-year"><span>(</span><input className="content" id="addYear" name="year" onChange={handleChange} /><span>)</span></div>
+              <div className="course-form-year"><span>(</span><input className="content" id="addYear" name="year" onChange={handleChange} placeholder="2020"/><span>)</span></div>
             </div>
           </div>
-          <button type="submit" onClick={handleSubmit}>SAVE</button>
-          <button type="reset" onClick={toggleAdding}>CANCEL</button>
+          <button className="save" type="submit" onClick={handleSubmit}>SAVE</button>
+          <button className="cancel" type="reset" onClick={toggleAdding}>CANCEL</button>
         </form>
       )
     }
@@ -59,7 +59,7 @@ function Courses() {
         <React.Fragment>
           { list.length === 0 ?
             <div onClick={toggleAdding}>
-              <p className="content">
+              <p className="content eg">
                 <b>e.g. Introduction to Python for data science</b><br />
                 DataCamp ( 2020 )
               </p>
@@ -126,8 +126,8 @@ function Courses() {
               <div className="course-form-year">(<input className="content" id="addYear" name="year" value={formData.year} onChange={handleEditing} />)</div>
             </div>
           </div>
-          <button type="submit" onClick={handleSubmit}>SAVE</button>
-          <button type="reset" onClick={cancelEditing}>CANCEL</button>
+          <button className="save" type="submit" onClick={handleSubmit}>SAVE</button>
+          <button className="cancel" type="reset" onClick={cancelEditing}>CANCEL</button>
         </form>
       )
     }

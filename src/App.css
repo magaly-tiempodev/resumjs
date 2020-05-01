@@ -52,6 +52,10 @@ select:focus {
   outline: 0px !important;
 }
 
+.eg {
+  opacity: .3;
+}
+
 .align-right {
   text-align: right;
 }
@@ -96,6 +100,31 @@ select:focus {
   flex: 5 0;
 }
 
+.save,
+.cancel {
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 4px 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  transition: background-color .27s;
+}
+.save {
+  background-color: var(--primary-color);
+}
+.save:hover {
+  background-color: var(--primary-hover-color);
+}
+.cancel {
+  background-color: #ccc;
+  margin-left: 10px;
+}
+.cancel:hover {
+  background-color: #eee;
+}
 .add,
 .remove {
   border: none;
