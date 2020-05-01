@@ -70,7 +70,19 @@ function Education() {
     }
     else {
       return (
-        <button className="add" type="button" onClick={toggleAdding}>ADD EDUCATION</button>
+        <React.Fragment>
+          { list.length === 0 ?
+            <div onClick={toggleAdding}>
+              <p className="content">
+                <b>e.g. Engineer Degree</b> in 'Ingeniería electrónica en computación'
+                <br />CETI, Centro de Enseñanza Técnica Industrial. ( 2003 - 2007 )
+              </p>
+              <button className="add" type="button">ADD EDUCATION</button>
+            </div>
+            :
+            <button className="add" type="button" onClick={toggleAdding}>ADD EDUCATION</button>
+          }
+        </React.Fragment>
       )
     }
   }

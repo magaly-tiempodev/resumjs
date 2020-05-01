@@ -45,7 +45,16 @@ function TechnicalProfile() {
     }
     else {
       return (
-        <button className="add" type="button" onClick={toggleAdding}>ADD PROFILE ITEM</button>
+        <React.Fragment>
+          { list.length === 0 ?
+            <div onClick={toggleAdding}>
+              <li>e.g. Software Engineer with 10+ years of experience in software development specializing in web applications, mostly in the client side along JavaScript libraries.</li>
+              <button className="add" type="button">ADD PROFILE ITEM</button>
+            </div>
+            :
+            <button className="add" type="button" onClick={toggleAdding}>ADD PROFILE ITEM</button>
+          }
+        </React.Fragment>
       )
     }
   }

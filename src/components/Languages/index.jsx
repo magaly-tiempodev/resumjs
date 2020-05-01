@@ -55,7 +55,18 @@ function Languages() {
     }
     else {
       return (
-        <p><button className="add" type="button" onClick={toggleAdding}>ADD LANGUAGE</button></p>
+        <React.Fragment>
+          { list.length === 0 ?
+            <div onClick={toggleAdding}>
+              <p className="content">
+                <b>e.g. Spanish</b>: Native
+              </p>
+              <button className="add" type="button">ADD LANGUAGE</button>
+            </div>
+            :
+            <p><button className="add" type="button" onClick={toggleAdding}>ADD LANGUAGE</button></p>
+          }
+        </React.Fragment>
       );
     }
   }

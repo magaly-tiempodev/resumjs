@@ -56,7 +56,19 @@ function Courses() {
     }
     else {
       return (
-        <button className="add" type="button" onClick={toggleAdding}>ADD COURSE</button>
+        <React.Fragment>
+          { list.length === 0 ?
+            <div onClick={toggleAdding}>
+              <p className="content">
+                <b>e.g. Introduction to Python for data science</b><br />
+                DataCamp ( 2020 )
+              </p>
+              <button className="add" type="button" >ADD COURSE</button>
+            </div>
+            :
+            <button className="add" type="button" onClick={toggleAdding}>ADD COURSE</button>
+          }
+        </React.Fragment>
       )
     }
   }

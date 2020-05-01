@@ -88,7 +88,28 @@ function ProfesionalExperience () {
     }
     else {
       return (
-        <p><button className="add" type="text" onClick={toggleAdding}>ADD EXPERIENCE</button></p>
+        <React.Fragment>
+          { list.length === 0 ?
+            <div onClick={toggleAdding}>
+              <div className="content">
+                <div className="row bold">
+                  <div className="col">e.g. November 2019 - Current</div>
+                  <div className="col-p">Tiempo Development</div>
+                  <div className="col align-right">Guadalajara, Jalisco, MX</div>
+                </div>
+                <div><b>Software Engineer II</b></div>
+                <ul>
+                  <li>Bootcamp on Python for data science.</li>
+                  <li>Programming for the Web with JavaScript. Algorithm Design and Analysis.</li>
+                  <li><b>Used Technologies:</b> Python3, Flask, Jupyter Notebook, Pandas, JavaScript, ReactJs.</li>
+                </ul>
+              </div>
+              <p><button className="add" type="text">ADD EXPERIENCE</button></p>
+            </div>
+            :
+            <p><button className="add" type="text" onClick={toggleAdding}>ADD EXPERIENCE</button></p>
+          }
+        </React.Fragment>
       )
     }
   }
