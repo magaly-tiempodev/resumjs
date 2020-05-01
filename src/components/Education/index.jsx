@@ -36,35 +36,35 @@ function Education() {
           <div className="education-form">
             <div className="education-form-input">
               <label htmlFor="addDegree">Degree</label>
-              <input className="content bold" id="addDegree" name="degree" onChange={handleChange} />
+              <input className="content bold" id="addDegree" name="degree" onChange={handleChange} placeholder="e.g. Engineer Degree" />
             </div>
             <div className="education-form-text">in</div>
             <div className="education-form-input">
               <label htmlFor="addTitle">Title</label>
-              <div className="education-form-format">' <input className="content" id="addTitle" name="title" onChange={handleChange} /> '</div>
+              <div className="education-form-format">' <input className="content" id="addTitle" name="title" onChange={handleChange} placeholder="Ingeniería electrónica en computación" /> '</div>
             </div>
           </div>
           <div className="education-form">
             <div className="education-form-input">
               <label htmlFor="addSchool">School</label>
-              <input className="content" id="addSchool" name="school" onChange={handleChange} />
+              <input className="content" id="addSchool" name="school" onChange={handleChange} placeholder="CETI, Centro de Enseñanza Técnica Industrial." />
             </div>
             <div className="education-form">
               <div className="education-form-text">(</div>
               <div className="education-form-input-year">
                 <label htmlFor="addStart">Year Start</label>
-                <input className="content" id="addStart" name="start" onChange={handleChange} />
+                <input className="content" id="addStart" name="start" onChange={handleChange} placeholder="2003" />
               </div>
               <div className="education-form-text">-</div>
               <div className="education-form-input-year">
                 <label htmlFor="addEnd">Year End</label>
-                <input className="content" id="addEnd" name="end" onChange={handleChange} />
+                <input className="content" id="addEnd" name="end" onChange={handleChange} placeholder="2007" />
               </div>
               <div className="education-form-text-last">)</div>
             </div>
           </div>
-          <button type="submit" onClick={handleSubmit}>SAVE</button>
-          <button type="reset" onClick={toggleAdding}>CANCEL</button>
+          <button className="save" type="submit" onClick={handleSubmit}>SAVE</button>
+          <button className="cancel" type="reset" onClick={toggleAdding}>CANCEL</button>
         </form>
       )
     }
@@ -73,7 +73,7 @@ function Education() {
         <React.Fragment>
           { list.length === 0 ?
             <div onClick={toggleAdding}>
-              <p className="content">
+              <p className="content eg">
                 <b>e.g. Engineer Degree</b> in 'Ingeniería electrónica en computación'
                 <br />CETI, Centro de Enseñanza Técnica Industrial. ( 2003 - 2007 )
               </p>
@@ -154,8 +154,8 @@ function Education() {
               <div className="education-form-text-last">)</div>
             </div>
           </div>
-          <button type="submit" onClick={handleSubmit}>SAVE</button>
-          <button type="reset" onClick={cancelEditing}>CANCEL</button>
+          <button className="save" type="submit" onClick={handleSubmit}>SAVE</button>
+          <button className="cancel" type="reset" onClick={cancelEditing}>CANCEL</button>
         </form>
       )
     }
