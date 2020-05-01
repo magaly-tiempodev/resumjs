@@ -41,16 +41,17 @@ function Name() {
             autoFocus
             name="fullName"
             value={temp}
-            onChange={inputOnChange} />
+            onChange={inputOnChange}
+            placeholder="Name LastName" />
         </div>
-        <button type="submit" onClick={handleSubmit}>SAVE</button>
-        <button type="reset" onClick={cancelEditing}>CANCEL</button>
+        <button className="save" type="submit" onClick={handleSubmit}>SAVE</button>
+        <button className="cancel" type="reset" onClick={cancelEditing}>CANCEL</button>
       </form>
     )
   }
   else {
     return (
-      <button className="fullname" type="button" onClick={toggleEditing}>{fullName? fullName:'Full Name'}</button>
+      <button className="fullname" type="button" onClick={toggleEditing}>{fullName? fullName:'Name LastName'}</button>
     )
   }
 }
