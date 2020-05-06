@@ -218,6 +218,7 @@ select:-moz-focusring {
   }
   .add-content,
   .add,
+  .eg,
   .remove {
     display: none;
   }
