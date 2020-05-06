@@ -219,7 +219,13 @@ function ProfesionalExperience () {
       )
     }
     else {
-      let experiencelist = experience.exp.split('\n').map(li => (<li key={li}>{li}</li>));
+      let experiencelist = experience.exp.split('\n').map((value, key) => {
+        if(value === '') {
+          return (<p key={key}></p>);
+        } else {
+          return (<li key={key}>{value}</li>);
+        }
+       });
       return (
         <button className="content" type="button" onClick={toggleEditing}>
           <div className="row bold">
