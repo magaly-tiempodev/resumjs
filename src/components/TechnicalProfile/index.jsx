@@ -129,7 +129,7 @@ function TechnicalProfile() {
       <div className="col-detail">
         <ul className="editable-container">
           {list.map(tech => (
-            <li className="editable-content" key={tech.id}>
+            <li className={"editable-content" + (list.length>0?"":" eg empty")} key={tech.id}>
               <RemoveTech id={tech.id} />
               <EditTech tech={tech} />
             </li>
@@ -138,11 +138,7 @@ function TechnicalProfile() {
             <AddTech />
           </li>
         </ul>
-        <ul className="editable-container">
-          <li className="editable-content">
-            <TechSummary />
-          </li>
-        </ul>
+        <TechSummary />
       </div>
     </div>
   );

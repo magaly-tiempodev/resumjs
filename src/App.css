@@ -220,7 +220,8 @@ select:-moz-focusring {
   .add,
   .eg,
   .empty,
-  .remove {
+  .remove,
+  .editable-container:hover .editable-content:hover .remove {
     display: none;
   }
 }
