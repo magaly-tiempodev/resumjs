@@ -11,7 +11,7 @@ function Languages() {
   function AddLanguage() {
     const nextId = (list.length > 0) ? list[list.length-1].id + 1 : 0;
     const [isAdding, setAdding] = React.useState(false);
-    const [formData, updateFormData] = React.useState({ id: nextId, language: "", level: "" });
+    const [formData, updateFormData] = React.useState({ id: nextId, language: "", level: "Native" });
 
     function toggleAdding() {
       setAdding(!isAdding);
