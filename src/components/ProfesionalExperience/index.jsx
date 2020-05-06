@@ -176,41 +176,41 @@ function ProfesionalExperience () {
             <div className="experience-form">
               <div className="experience-form-input">
                 <label>Start Date</label>
-                <input className="content bold" type="text" name="start" value={formData.start} onChange={handleEditing} />
+                <input className="content bold" type="text" name="start" value={formData.start} onChange={handleEditing} placeholder="e.g. November 2019" />
               </div>
               <div className="experience-form-text">-</div>
               <div className="experience-form-input">
                 <label>End Date</label>
-                <input className="content bold" type="text" name="end" value={formData.end} onChange={handleEditing} />
+                <input className="content bold" type="text" name="end" value={formData.end} onChange={handleEditing} placeholder="Current" />
               </div>
             </div>
             <div className="experience-form-text"></div>
             <div className="experience-form-input">
               <label>Company Name</label>
-              <input className="content bold" type="text" name="company" value={formData.company} onChange={handleEditing} />
+              <input className="content bold" type="text" name="company" value={formData.company} onChange={handleEditing} placeholder="Tiempo Development" />
             </div>
             <div className="experience-form-text"></div>
             <div className="experience-form-input">
               <label>Company Location</label>
-              <input className="content bold" type="text" name="location" value={formData.location} onChange={handleEditing} />
+              <input className="content bold" type="text" name="location" value={formData.location} onChange={handleEditing} placeholder="Guadalajara, Jalisco, MX" />
             </div>
           </div>
           <div className="experience-form">
             <div className="experience-form-input">
               <label>Position</label>
-              <input className="content bold" type="text" name="position" value={formData.position} onChange={handleEditing} />
+              <input className="content bold" type="text" name="position" value={formData.position} onChange={handleEditing} placeholder="Software Engineer II" />
             </div>
           </div>
           <div className="experience-form-sub">
             <div className="experience-form-input">
               <label>Experience</label>
-              <textarea rows="5" className="content" name="exp" value={formData.exp} onChange={handleEditing} />
+              <textarea rows="5" className="content" name="exp" value={formData.exp} onChange={handleEditing} placeholder={'Bootcamp on Python for data science. \nProgramming for the Web with JavaScript. \nAlgorithm Design and Analysis.'}/>
             </div>
           </div>
           <div className="experience-form-sub">
             <div className="experience-form-input">
               <label>Used Technologies</label>
-              <input type="text" className="content" name="tech" value={formData.tech} onChange={handleEditing} />
+              <input type="text" className="content" name="tech" value={formData.tech} onChange={handleEditing} placeholder="Python3, Flask, Jupyter Notebook, Pandas, JavaScript, React." />
             </div>
           </div>
           <button className="save" type="submit" onClick={handleSubmit}>SAVE</button>
@@ -236,7 +236,7 @@ function ProfesionalExperience () {
           <div><b>{experience.position}</b></div>
           <ul>
             {experiencelist}
-            <li><b>Used Technologies:</b> {experience.tech}</li>
+            <li className={(experience.tech==''?"empty eg":"")} ><b>Used Technologies:</b> {experience.tech?experience.tech:'e.g. JavaScript, .NET, PHP, AWS'}</li>
           </ul>
         </button>
       )
