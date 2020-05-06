@@ -145,7 +145,7 @@ function Languages() {
   }
 
   return (
-    <div className="row m mb">
+    <div className={"row m mb" + (list.length>0?"":" empty")} >
       <div className="col-title">
         <h4>Language Skills</h4>
       </div>

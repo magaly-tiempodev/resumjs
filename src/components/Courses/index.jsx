@@ -151,7 +151,7 @@ function Courses() {
   }
 
   return (
-    <div className="row m">
+    <div className={"row m" + (list.length>0?"":" empty")} >
       <div className="col-title">
         <h4>Courses and others</h4>
       </div>

@@ -180,7 +180,7 @@ function Education() {
   }
 
   return (
-    <div className="row m">
+    <div className={"row m" + (list.length>0?"":" empty")} >
       <div className="col-title">
         <h4>Education</h4>
       </div>

@@ -246,7 +246,7 @@ function ProfesionalExperience () {
   }
 
   return (
-    <div className="row m">
+    <div className={"row m" + (list.length>0?"":" empty")} >
       <div className="col-title">
         <h4>Professional Experience</h4>
       </div>

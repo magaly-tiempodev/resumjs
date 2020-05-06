@@ -122,7 +122,7 @@ function TechnicalProfile() {
   }
 
   return (
-    <div className="row">
+    <div className={"row" + (list.length>0?"":" empty")} >
       <div className="col-title">
         <h4>Technical Profile</h4>
       </div>
