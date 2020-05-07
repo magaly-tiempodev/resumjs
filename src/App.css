@@ -141,14 +141,15 @@ select:focus {
 .remove {
   background: var(--alert-color);
   color: white;
+  margin-top: 2px;
   margin-left: -25px;
   position: absolute;
   padding: 0;
   width: 20px;
   height: 20px;
-  align-items: center;
-  justify-content: center;
+  line-height: 10px;
   display: none;
+  justify-content: center;
 }
 .content {
   background: transparent;
@@ -191,6 +192,12 @@ select:-moz-focusring {
 
 .editable-container:hover .editable-content {
   opacity: .5;
+}
+.editable-container .editable-content form {
+  background: #fff;
+  padding-left: 50px;
+  position: relative;
+  left: -50px;
 }
 
 .editable-container:hover .editable-content:hover {
